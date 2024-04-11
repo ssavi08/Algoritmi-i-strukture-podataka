@@ -1,0 +1,3 @@
+C:/Users/sandr/CLionProjects/Algosi/cmake-build-debug/CMakeFiles/Algosi.dir
+C:/Users/sandr/CLionProjects/Algosi/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/sandr/CLionProjects/Algosi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
