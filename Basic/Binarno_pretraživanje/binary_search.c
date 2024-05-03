@@ -1,23 +1,36 @@
 #include <stdio.h>
 
-int main(){
-    int n = 10;
-    int V[10] = {3, 5, 8, 10, 11, 11, 13, 23, 24, 25};
-    int trazeni_broj = 0;
-    int donja_granica = 1;
-    int gornja_granica = n;
-    printf("Unesi broj kojeg trazis:");
-    scanf("%d", &trazeni_broj);
+int binarySearch(int arr[], int l, int r, int x);
 
-    while(donja_granica <= gornja_granica){
-        int sredina = (donja_granica+gornja_granica)/2;
-        if(trazeni_broj == V[sredina]){
-            printf("Pronaden."); break;
-        }
-        if(trazeni_broj > V[sredina]) donja_granica = sredina+1;
-        if(trazeni_broj < V[sredina]) gornja_granica = sredina-1;
-    }
-    if(donja_granica >= gornja_granica)
-        printf("Broj nije pronaden");
+int main(void){
+
+    int arr[6] = { 2, 4, 6, 10, 12, 14 };
+    int r = sizeof(arr) / sizeof(arr[0]);
+    printf("Unesi broj kojeg trazis:");
+    int x;
+    scanf("%d", &x);
+    int result = binarySearch(arr, 0, r-1, x);
+    (result == -1) ? printf("Ne sadrzi") : printf("Sadrzi.");
+
     return 0;
+
 }
+
+int binarySearch(int arr[], int l, int r, int x){
+
+    while(l <= r){
+        int m = l + (r - l) / 2;
+
+        if( arr[m] == x )
+            return m;
+
+        if( arr[m] < x )
+            l = m + 1;
+
+        else
+            r = m - 1;
+    }
+
+    return -1;
+}
+
